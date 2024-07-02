@@ -4,13 +4,13 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING
     },
     date: {
-      type: Sequelize.DATETIME
+      type: Sequelize.DATE
     },
     note: {
       type: Sequelize.STRING
     },
     updatedDate: {
-      type: Sequelize.DATETIME,
+      type: Sequelize.DATE,
       defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       allowNull: true
     },

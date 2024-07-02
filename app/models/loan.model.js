@@ -9,17 +9,17 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING
     },
     guarantees: {
-      type: Sequelize.ARRAY(Sequelize.JSON),
+      type: Sequelize.JSON,
       defaultValue: []
     },
     group: {
       type: Sequelize.STRING
     },
     startDate: {
-      type: Sequelize.DATETIME
+      type: Sequelize.DATE
     },
     endDate: {
-      type: Sequelize.DATETIME
+      type: Sequelize.DATE
     },
     amount: {
       type: Sequelize.FLOAT
@@ -37,15 +37,15 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING
     },
     files: {
-      type: Sequelize.ARRAY(Sequelize.STRING),
+      type: Sequelize.JSON,
       defaultValue: []
     },
     images: {
-      type: Sequelize.ARRAY(Sequelize.STRING),
+      type: Sequelize.JSON,
       defaultValue: []
     },
     updatedDate: {
-      type: Sequelize.DATETIME,
+      type: Sequelize.DATE,
       defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       allowNull: true
     },

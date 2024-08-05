@@ -1,5 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
   const ReleaseDate = sequelize.define('releaseDate', {
+    rid: {
+      type: Sequelize.STRING,
+      defaultValue: Sequelize.UUIDV1,
+      primaryKey: true
+    },
     type: {
       type: Sequelize.STRING
     },
@@ -8,11 +13,6 @@ module.exports = (sequelize, Sequelize) => {
     },
     note: {
       type: Sequelize.STRING
-    },
-    updatedDate: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      allowNull: true
     },
     isActive: {
       type: Sequelize.BOOLEAN

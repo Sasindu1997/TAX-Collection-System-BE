@@ -32,11 +32,6 @@ module.exports = (sequelize, Sequelize) => {
     route: {
       type: Sequelize.STRING
     },
-    updatedDate: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      allowNull: true
-    },
     isActive: {
       type: Sequelize.BOOLEAN
     }

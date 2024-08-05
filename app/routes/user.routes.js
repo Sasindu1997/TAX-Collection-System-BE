@@ -1,33 +1,37 @@
 module.exports = app => {
-    const users = require("../controllers/user.controller.js");
+  const users = require('../controllers/user.controller.js')
 
-    var router = require("express").Router();
+  const router = require('express').Router()
 
-    // Create a new Tutorial
-    router.post("/", users.create);
+  // Create a new User
+  router.post('/', users.create)
 
-    // Retrieve all Tutorials
-    router.get("/", users.findAll);
+  // Retrieve all Users
+  router.get('/', users.findAll)
 
-     // Retrieve all Tutorials
-     router.get("/findAllManagers/:role", users.findAllManagers);
+  // Retrieve all published Users
+  router.get('/published', users.findAllPublished)
 
-    // Retrieve all published Tutorials
-    router.get("/published", users.findAllPublished);
+  // Retrieve a single User with id
+  router.get('/:uid', users.findOne)
 
-    // Retrieve a single Tutorial with id
-    router.get("/:id", users.findOne);
+  // Retrieve a single User with phone
+  router.get('/phone/:phoneNumber', users.findAllByPhone)
 
-    // // Update a Tutorial with id
-    router.put("/:id", users.update);
+  // Retrieve a single User with nic
+  router.get('/nic/:nic', users.findAllByNic)
 
-    // // Delete a Tutorial with id
-    router.delete("/:id", users.delete);
+  // Retrieve a single User with nic
+  router.get('/type/:type', users.findAllByType)
 
-    // Delete all Tutorials
-    router.delete("/", users.deleteAll);
+  // // Update a User with id
+  router.put('/:uid', users.update)
 
-    router.get("/findAllBySupplier/:id", users.findAllBySupplier);
+  // // Delete a User with id
+  router.delete('/:uid', users.delete)
 
-    app.use('/api/users', router);
-};
+  // Delete all Users
+  router.delete('/', users.deleteAll)
+
+  app.use('/api/user', router)
+}

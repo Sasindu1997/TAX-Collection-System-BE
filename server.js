@@ -41,9 +41,13 @@ app.get('/', (req, res) => {
 // routes
 // require('./app/routes/turorial.routes')(app)
 // require('./app/routes/category.routes')(app)
-// require('./app/routes/customer.routes')(app)
+require('./app/routes/client.routes')(app)
 // require('./app/routes/subCategory.routes')(app)
-// require('./app/routes/user.routes')(app)
+require('./app/routes/user.routes')(app)
+require('./app/routes/group.routes')(app)
+require('./app/routes/releaseDate.routes')(app)
+require('./app/routes/loan.routes')(app)
+require('./app/routes/payment.routes')(app)
 // require('./app/routes/upload.routes')(app)
 
 // set port, listen for requests

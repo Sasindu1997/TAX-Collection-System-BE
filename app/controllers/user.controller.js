@@ -7,7 +7,7 @@ const Op = db.Sequelize.Op
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.firstName || !req.body.lastName || !req.body.nic ||
-    !req.body.userName || !req.body.password || !req.body.type || !req.body.address) {
+    !req.body.userName || !req.body.password || !req.body.type) {
     res.status(400).send({
       message: 'Content can not be empty!'
     })
@@ -17,7 +17,7 @@ exports.create = (req, res) => {
   // validate nic and phone number
   const nic = req.body.nic
   const phone = req.body.phoneNumber
-  if (nic.length != 10 || phone.length != 10) {
+  if (nic.length != 10 || (phone && phone.length != 10)) {
     res.status(400).send({
       message: 'NIC and Phone number should be of 10 digits!'
     })

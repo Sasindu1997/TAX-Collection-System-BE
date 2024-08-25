@@ -6,7 +6,7 @@ const Op = db.Sequelize.Op
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.client || !req.body.group || !req.body.amount ||
-     !req.body.interestRate || !req.body.startDate || !req.body.endDate ||
+     !req.body.interestRate || !req.body.startDate ||
      !req.body.status) {
     res.status(400).send({
       message: 'Content can not be empty!'
@@ -28,6 +28,7 @@ exports.create = (req, res) => {
     images: req.body.images,
     isActive: req.body.isActive ? req.body.isActive : true,
     client: req.body.client,
+    paymentPeriod: req.body.paymentPeriod,
     group: req.body.group
   }
 

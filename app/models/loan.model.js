@@ -46,6 +46,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     isActive: {
       type: Sequelize.BOOLEAN
+    },
+    paymentPeriod: {
+      type: Sequelize.STRING,
+      defaultValue: ''
     }
   })
 

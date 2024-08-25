@@ -5,11 +5,11 @@ const app = express()
 
 global.__basedir = __dirname
 
-const corsOptions = {
-  origin: 'http://localhost:8080'
-}
+// const corsOptions = {
+//   origin: 'http://localhost:8080'
+// }
 
-app.use(cors(corsOptions))
+app.use(cors())
 
 // parse requests of content-type - application/json
 app.use(express.json())
